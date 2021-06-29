@@ -64,5 +64,5 @@ INSERT INTO TREATMENT VALUES(9,3,'2020-06-07','11:00','11:30','Waschen','Waschen
 INSERT INTO TREATMENT VALUES(12,11,'2020-06-08','15:00','15:30','Physiotherapie','\u00dcbungen zur Stabilisation und Mobilisierung der R\u00fcckenmuskulatur')
 INSERT INTO TREATMENT VALUES(24,11,'2020-11-30','19:00','20:00','Test','Test')
 INSERT INTO CAREGIVER VALUES(1,'Frank,'Leon','1234')
-INSERT INTO CAREGIVER VALUES(1,'Guel,'Daniel','1234')
-INSERT INTO CAREGIVER VALUES(1,'Werkmeister,'Elton','1234')
+INSERT INTO CAREGIVER VALUES(1,'Guel,'Daniel','5678')
+INSERT INTO CAREGIVER VALUES(1,'Werkmeister,'Elton','9876')

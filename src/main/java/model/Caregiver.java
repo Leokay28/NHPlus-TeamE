@@ -82,7 +82,7 @@ public class Caregiver extends Person {
         return "Caregiver" + "\nMNID: " + this.cid +
                 "\nFirstname: " + this.getFirstName() +
                 "\nSurname: " + this.getSurname() +
-                "\nTelephone: " + this.getTelephone() +
+                "\nTelephone: " + this.telephone +
                 "\n";
     }
 }

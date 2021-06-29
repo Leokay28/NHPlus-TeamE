@@ -1,8 +1,6 @@
 package datastorage;
 
-
 import model.Caregiver;
-import model.Patient;
 import utils.DateConverter;
 
 import java.sql.Connection;
@@ -16,7 +14,7 @@ import java.util.ArrayList;
  */
 public class CaregiverDAO extends DAOimp<Caregiver> {
     /**
-     * constructs Onbject. Calls the Constructor from <code>DAOImp</code> to store the connection.
+     * constructs Object. Calls the Constructor from <code>DAOImp</code> to store the connection.
      * @param conn
      */
     public CaregiverDAO(Connection conn) {

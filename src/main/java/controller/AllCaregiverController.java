@@ -27,7 +27,7 @@ public class AllCaregiverController {
     @FXML
     private TableColumn<Caregiver, String> colSurname;
     @FXML
-    private TableColumn<Caregiver, String> colPhonenumber;
+    private TableColumn<Caregiver, String> colTelephone;
 
     @FXML
     Button btnDelete;
@@ -38,7 +38,7 @@ public class AllCaregiverController {
     @FXML
     TextField txtFirstname;
     @FXML
-    TextField txtPhonenumber;
+    TextField txtTelephone;
 
     private ObservableList<Caregiver> tableviewContent = FXCollections.observableArrayList();
     private CaregiverDAO dao;
@@ -59,8 +59,8 @@ public class AllCaregiverController {
         this.colSurname.setCellValueFactory(new PropertyValueFactory<Caregiver, String>("surname"));
         this.colSurname.setCellFactory(TextFieldTableCell.forTableColumn());
 
-        this.colPhonenumber.setCellValueFactory(new PropertyValueFactory<Caregiver, String>("phonenumber"));
-        this.colPhonenumber.setCellFactory(TextFieldTableCell.forTableColumn());
+        this.colTelephone.setCellValueFactory(new PropertyValueFactory<Caregiver, String>("telephone"));
+        this.colTelephone.setCellFactory(TextFieldTableCell.forTableColumn());
 
         //Anzeigen der Daten
         this.tableView.setItems(this.tableviewContent);
@@ -87,12 +87,12 @@ public class AllCaregiverController {
     }
 
     /**
-     * handles new phonenumber value
+     * handles new telephone value
      * @param event event including the value that a user entered into the cell
      */
     @FXML
-    public void handleOnEditPhonenumber(TableColumn.CellEditEvent<Caregiver, String> event){
-        event.getRowValue().setPhonenumber(event.getNewValue());
+    public void handleOnEditTelephone(TableColumn.CellEditEvent<Caregiver, String> event){
+        event.getRowValue().setTelephone(event.getNewValue());
         doUpdate(event);
     }
 
@@ -148,9 +148,9 @@ public class AllCaregiverController {
     public void handleAdd() {
         String surname = this.txtSurname.getText();
         String firstname = this.txtFirstname.getText();
-        String phonenumber = this.txtPhonenumber.getText();
+        String telephone = this.txtTelephone.getText();
         try {
-            Caregiver c = new Caregiver(firstname, surname, phonenumber);
+            Caregiver c = new Caregiver(firstname, surname, telephone);
             dao.create(c);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -165,7 +165,7 @@ public class AllCaregiverController {
     private void clearTextfields() {
         this.txtFirstname.clear();
         this.txtSurname.clear();
-        this.txtPhonenumber.clear();
+        this.txtTelephone.clear();
     }
 
 }

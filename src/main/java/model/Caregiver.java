@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class Caregiver extends Person {
     private long cid;
-    private String phonenumber;
+    private String telephone;
     private List<Treatment> allTreatments = new ArrayList<Treatment>();
 
 
@@ -17,11 +17,11 @@ public class Caregiver extends Person {
      * constructs a caregiver from the given params.
      * @param firstname
      * @param surname
-     * @param phonenumber
+     * @param telephone
      */
-    public Caregiver(String firstname, String surname, String phonenumber) {
+    public Caregiver(String firstname, String surname, String telephone) {
         super(firstname, surname);
-        this.phonenumber = phonenumber;
+        this.telephone = telephone;
     }
 
     /**
@@ -29,12 +29,12 @@ public class Caregiver extends Person {
      * @param cid
      * @param firstname
      * @param surname
-     * @param phonenumber
+     * @param telephone
      */
-    public Caregiver(long cid, String firstname, String surname, String phonenumber) {
+    public Caregiver(long cid, String firstname, String surname, String telephone) {
         super(firstname, surname);
         this.cid = cid;
-        this.phonenumber = phonenumber;
+        this.telephone = telephone;
     }
 
     /**
@@ -47,18 +47,18 @@ public class Caregiver extends Person {
 
     /**
      *
-     * @return phonenumber as string
+     * @return telephone as string
      */
-    public String getPhonenumber() {
-        return phonenumber;
+    public String getTelephone() {
+        return telephone;
     }
 
     /**
      *
-     * @param phonenumber
+     * @param telephone
      */
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
     }
 
     /**
@@ -82,7 +82,7 @@ public class Caregiver extends Person {
         return "Caregiver" + "\nMNID: " + this.cid +
                 "\nFirstname: " + this.getFirstName() +
                 "\nSurname: " + this.getSurname() +
-                "\nPhonenumber: " + this.phonenumber +
+                "\nTelephone: " + this.getTelephone() +
                 "\n";
     }
 }

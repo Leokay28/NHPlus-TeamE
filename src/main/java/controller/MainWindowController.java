@@ -13,13 +13,13 @@ public class MainWindowController {
 
     @FXML
     private void handleShowAllPatient(ActionEvent e) {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/AllPatientView.fxml"));
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/Login.fxml"));
         try {
             mainBorderPane.setCenter(loader.load());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        AllPatientController controller = loader.getController();
+        LoginController controller = loader.getController();
     }
 
     @FXML

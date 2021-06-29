@@ -6,6 +6,7 @@ import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -24,8 +25,8 @@ public class Main extends Application {
 
     public void mainWindow() {
         try {
-            FXMLLoader loader = new FXMLLoader(Main.class.getResource("/MainWindowView.fxml"));
-            BorderPane pane = loader.load();
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("/Login.fxml"));
+            AnchorPane pane = loader.load();
 
             Scene scene = new Scene(pane);
             this.primaryStage.setTitle("NHPlus");

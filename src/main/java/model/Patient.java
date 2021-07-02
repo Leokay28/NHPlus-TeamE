@@ -13,7 +13,9 @@ public class Patient extends Person {
     private LocalDate dateOfBirth;
     private String careLevel;
     private String roomnumber;
-    private String assets;
+    /*private String assets;
+    Vermoegensstand_entfernen
+     */
     private List<Treatment> allTreatments = new ArrayList<Treatment>();
 
     /**
@@ -23,14 +25,15 @@ public class Patient extends Person {
      * @param dateOfBirth
      * @param careLevel
      * @param roomnumber
-     * @param assets
      */
-    public Patient(String firstName, String surname, LocalDate dateOfBirth, String careLevel, String roomnumber, String assets) {
+    public Patient(String firstName, String surname, LocalDate dateOfBirth, String careLevel, String roomnumber) {
         super(firstName, surname);
         this.dateOfBirth = dateOfBirth;
         this.careLevel = careLevel;
         this.roomnumber = roomnumber;
-        this.assets = assets;
+        /*this.assets = assets;
+        Vermoegensstand_entfernen
+         */
     }
 
     /**
@@ -41,15 +44,16 @@ public class Patient extends Person {
      * @param dateOfBirth
      * @param careLevel
      * @param roomnumber
-     * @param assets
      */
-    public Patient(long pid, String firstName, String surname, LocalDate dateOfBirth, String careLevel, String roomnumber, String assets) {
+    public Patient(long pid, String firstName, String surname, LocalDate dateOfBirth, String careLevel, String roomnumber) {
         super(firstName, surname);
         this.pid = pid;
         this.dateOfBirth = dateOfBirth;
         this.careLevel = careLevel;
         this.roomnumber = roomnumber;
-        this.assets = assets;
+        /*this.assets = assets;
+        Vermoegensstand_entfernt
+         */
     }
 
     /**
@@ -113,17 +117,21 @@ public class Patient extends Person {
      *
      * @return assets as string
      */
-    public String getAssets() {
+    /*public String getAssets() {
         return assets;
     }
+    Veroegensstand_entfernen
+     */
 
     /**
      *
      * @param assets
      */
-    public void setAssets(String assets) {
+    /*public void setAssets(String assets) {
         this.assets = assets;
     }
+    Vermoegensstand_entfernen
+     */
 
     /**
      * adds a treatment to the treatment-list, if it does not already contain it.
@@ -149,7 +157,9 @@ public class Patient extends Person {
                 "\nBirthday: " + this.dateOfBirth +
                 "\nCarelevel: " + this.careLevel +
                 "\nRoomnumber: " + this.roomnumber +
-                "\nAssets: " + this.assets +
+                /*"\nAssets: " + this.assets +
+                Vermoegensstand_entfernen
+                 */
                 "\n";
     }
 }

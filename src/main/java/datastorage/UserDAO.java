@@ -4,6 +4,7 @@ import model.User;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class UserDAO extends DAOimp<User> {
@@ -14,13 +15,13 @@ public class UserDAO extends DAOimp<User> {
 
     @Override
     protected String getCreateStatementString(User user) {
-        return String.format("INSERT INTO user (uid, username, password, role) VALUES " +
+        return String.format("INSERT INTO USER (uid, username, password, role) VALUES " +
                         "(%d, '%s', '%s', '%s')", user.getUid(), user.getUsername(), user.getPassword(), user.getRole());
     }
 
     @Override
     protected String getReadByIDStatementString(long key) {
-        return String.format("SELECT * FROM user WHERE uid = %d", key);
+        return String.format("SELECT * FROM USER WHERE uid = %d", key);
     }
 
     @Override
@@ -34,7 +35,7 @@ public class UserDAO extends DAOimp<User> {
 
     @Override
     protected String getReadAllStatementString() {
-        return "SELECT * FROM user";
+        return "SELECT * FROM USER";
     }
 
     @Override
@@ -54,12 +55,25 @@ public class UserDAO extends DAOimp<User> {
 
     @Override
     protected String getUpdateStatementString(User user) {
-        return String.format("UPDATE user SET uid = %d, username ='%s', password = '%s', role = '%s'", user.getUid(),
+        return String.format("UPDATE USER SET uid = %d, username ='%s', password = '%s', role = '%s'", user.getUid(),
                 user.getUsername(), user.getPassword(), user.getRole());
     }
 
     @Override
     protected String getDeleteStatementString(long key) {
-        return String.format("Delete FROM user WHERE uid= %d", key);
+        return String.format("DELETE FROM USER WHERE uid= %d", key);
+    }
+
+    public User getUserByUsername(String username) throws SQLException {
+        User obj = null;
+        String sql = String.format("SELECT * FROM USER WHERE username= '%s'", username);
+        Statement st = conn.createStatement();
+        ResultSet result = st.executeQuery(sql);
+        if(result.next()) {
+            obj = getInstanceFromResultSet(result);
+        } else {
+            return null;
+        }
+        return obj;
     }
 }

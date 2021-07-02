@@ -19,20 +19,20 @@
                 </font>
             </Label>
     </HBox>
-    <GridPane hgap="10.0" layoutX="7" layoutY="7">
-            <Label text="Benutzername:" GridPane.rowIndex="1" GridPane.columnIndex="1">
+    <GridPane alignment="CENTER" prefHeight="250.0" prefWidth="200.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" vgap="10.0" hgap="10.0">
+            <Label text="Benutzername:" GridPane.rowIndex="4" GridPane.columnIndex="1">
                 <font>
                     <Font name="System Bold" size="13.0" />
                 </font>
             </Label>
-            <Label text="Passwort:" GridPane.rowIndex="2" GridPane.columnIndex="1">
+            <Label text="Passwort:" GridPane.rowIndex="5" GridPane.columnIndex="1">
                 <font>
                     <Font name="System Bold" size="13.0" />
                 </font>
             </Label>
-        <TextField fx:id="txtUsername" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
-        <TextField fx:id="txtPassword" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
-        <TextField fx:id="txtError" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-        <Button text="Anmelden" fx:id="btnSubmit" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+        <TextField fx:id="txtUsername" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+        <PasswordField fx:id="txtPassword" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+        <Label fx:id="txtError" GridPane.columnIndex="2" GridPane.rowIndex="6"/>
+        <Button text="Anmelden" fx:id="btnSubmit" onAction="#handleSubmit" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
     </GridPane>
 </AnchorPane>

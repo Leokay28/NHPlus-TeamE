@@ -3,6 +3,8 @@ package controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import java.io.IOException;
 
@@ -12,14 +14,25 @@ public class MainWindowController {
     private BorderPane mainBorderPane;
 
     @FXML
+    private void handleLogout(ActionEvent e) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/Login.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Main.setScene(scene);
+        } catch (IOException error) {
+            error.printStackTrace();
+        }
+    }
+
+    @FXML
     private void handleShowAllPatient(ActionEvent e) {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/Login.fxml"));
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/AllPatientView.fxml"));
         try {
             mainBorderPane.setCenter(loader.load());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        LoginController controller = loader.getController();
+        AllPatientController controller = loader.getController();
     }
 
     @FXML

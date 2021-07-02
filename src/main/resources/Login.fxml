@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane
+            xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.LoginController"
+            fx:id="mainAnchorPane"
+            minHeight="300.0" minWidth="400.0"
+            maxHeight="400.0" maxWidth="600.0"
+>
+    <HBox alignment="TOP_CENTER" prefWidth="200.0" spacing="25.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+            <Label alignment="CENTER" contentDisplay="CENTER" minWidth="400.0" text="Login" textAlignment="CENTER">
+                <font>
+                    <Font size="36.0" />
+                </font>
+            </Label>
+    </HBox>
+    <GridPane alignment="CENTER" prefHeight="250.0" prefWidth="200.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" vgap="10.0" hgap="10.0">
+            <Label text="Benutzername:" GridPane.rowIndex="4" GridPane.columnIndex="1">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font>
+            </Label>
+            <Label text="Passwort:" GridPane.rowIndex="5" GridPane.columnIndex="1">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font>
+            </Label>
+        <TextField fx:id="txtUsername" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+        <PasswordField fx:id="txtPassword" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+        <Label fx:id="txtError" GridPane.columnIndex="2" GridPane.rowIndex="6"/>
+        <Button text="Anmelden" fx:id="btnSubmit" onAction="#handleSubmit" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+    </GridPane>
+</AnchorPane>

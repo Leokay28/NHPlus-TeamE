@@ -15,13 +15,7 @@ public class MainWindowController {
 
     @FXML
     private void handleLogout(ActionEvent e) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/Login.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
-            Main.setScene(scene);
-        } catch (IOException error) {
-            error.printStackTrace();
-        }
+        Main.logout();
     }
 
     @FXML

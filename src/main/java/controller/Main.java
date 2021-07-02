@@ -7,17 +7,16 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import model.User;
+import model.UserSession;
 
 import java.io.IOException;
 
 public class Main extends Application {
 
     private static Stage primaryStage;
-    private static User loggedUser;
+    private static UserSession userSession;
 
     @Override
     public void start(Stage pS) {
@@ -53,6 +52,36 @@ public class Main extends Application {
     public static void setScene(Scene scene) {
         primaryStage.setScene(scene);
         primaryStage.centerOnScreen();
+    }
+
+    public static void createUserSession(float uid, String username, String role) throws IOException {
+        if(userSession == null) {
+            userSession = new UserSession(uid, username, role);
+        }
+    }
+
+    public static void clearUserSession() {
+        if(userSession != null) {
+            userSession = null;
+        }
+    }
+
+    public static UserSession getUserSession() {
+        if(userSession != null) {
+            return userSession;
+        }
+        return null;
+    }
+
+    public static void logout() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/Login.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            clearUserSession();
+            setScene(scene);
+        } catch (IOException error) {
+            error.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {

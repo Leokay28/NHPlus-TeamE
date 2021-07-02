@@ -44,7 +44,7 @@ public class LoginController {
     }
 
     @FXML
-    private void handleSubmit() throws SQLException, InvalidKeyException, InterruptedException {
+    private void handleSubmit() throws SQLException, InvalidKeyException, InterruptedException, IOException {
         String usernameInput = txtUsername.getText();
         String passwordInput = PasswordEncryptor.ecrypt(txtPassword.getText());
         if(usernameInput.equals("")) {
@@ -77,8 +77,8 @@ public class LoginController {
         txtError.setText(error);
     }
 
-    private void login(User user) {
-        System.out.println("LOGGED " + txtUsername);
+    private void login(User user) throws IOException {
+        Main.createUserSession(user.getUid(), user.getUsername(), user.getRole());
         openMainWindow();
     }
 

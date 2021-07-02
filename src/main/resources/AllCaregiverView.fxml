@@ -23,8 +23,8 @@
             <TextField fx:id="txfSurname" prefHeight="26.0" prefWidth="220.0" promptText="Nachname" />
             <TextField fx:id="txfFirstname" prefHeight="26.0" prefWidth="220.0" promptText="Vorname" />
             <TextField fx:id="txfTelephone" prefWidth="160.0" promptText="Telefonnummer" />
-            <Button fx:id="btnAdd" mnemonicParsing="false" prefWidth="90.0" text="Hinzufügen" />
-            <Button fx:id="btnDelete" mnemonicParsing="false" prefWidth="90.0" text="Löschen" />
+            <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#handleAdd" prefWidth="90.0" text="Hinzufügen" />
+            <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#handleDeleteRow" prefWidth="90.0" text="Löschen" />
          </children></HBox>
       <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefWidth="200.0" spacing="25.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
          <children>

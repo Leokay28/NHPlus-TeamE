@@ -1,12 +1,10 @@
 package datastorage;
 
 import model.Caregiver;
-import utils.DateConverter;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
@@ -50,7 +48,6 @@ public class CaregiverDAO extends DAOimp<Caregiver> {
     @Override
     protected Caregiver getInstanceFromResultSet(ResultSet result) throws SQLException {
         Caregiver c = null;
-        LocalDate date = DateConverter.convertStringToLocalDate(result.getString(4));
         c = new Caregiver(result.getInt(1), result.getString(2),
                 result.getString(3), result.getString(4));
         return c;
@@ -75,7 +72,6 @@ public class CaregiverDAO extends DAOimp<Caregiver> {
         ArrayList<Caregiver> list = new ArrayList<Caregiver>();
         Caregiver c = null;
         while (result.next()) {
-            LocalDate date = DateConverter.convertStringToLocalDate(result.getString(4));
             c = new Caregiver(result.getInt(1), result.getString(2),
                     result.getString(3), result.getString(4));
             list.add(c);
